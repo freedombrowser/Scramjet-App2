@@ -58,9 +58,7 @@ fastify.register(fastifyStatic, {
 	decorateReply: false,
 });
 
-fastify.setNotFoundHandler((res, reply) => {
-	return reply.code(404).type("text/html").sendFile("404.html");
-});
+
 
 fastify.server.on("listening", () => {
 	const address = fastify.server.address();
